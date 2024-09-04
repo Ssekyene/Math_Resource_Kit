@@ -1,0 +1,41 @@
+header {
+	background-color: white;
+	height: 100px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 2px solid #03010189;
+}
+
+#header_logo {
+	height: 99%;
+	width: 142px;
+	background-image: url("../images/logo1.png");
+	background-repeat: no-repeat;
+	background-position: center;
+    background-size: contain;
+	margin-left: 10px;
+}
+
+nav {
+    height: 100%;
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+    margin: auto 40px;
+    align-items: center;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: blue;
+    font-size: 1.3em;
+    /* border: 1px solid red; */
+}
+
+nav a:hover {
+    /* cursor: pointer; */
+    color: rgb(21, 181, 9);
+}

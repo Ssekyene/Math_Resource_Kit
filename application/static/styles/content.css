@@ -1,0 +1,35 @@
+.list ul {
+    border: 2px solid #03010189;
+    list-style: none;
+    padding-left: 0;
+}
+
+.list ul li {
+    border: 2px solid rgb(124, 124, 231);
+    border-radius: 3px;
+    font-size: 1.3em;
+    margin: 10px 5px;
+    padding: 3px;
+}
+
+.list ul li:hover {
+
+}
+
+.list ul li a {
+    color: blue;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.list ul li a:hover {
+    color: rgb(21, 181, 9);
+    text-decoration: underline;
+}
+
+.list ul li:hover a {
+    color: rgb(21, 181, 9);
+    text-decoration: underline;
+}
+
