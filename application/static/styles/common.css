@@ -1,3 +1,9 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
 	margin:0px;
 	padding:0px;
@@ -8,11 +14,21 @@ body {
 	color: #484848;
 	font-size: 14px;
 	font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    /* border: 1px solid green; */
 }
 
 .container {
-    /* border: 1px solid red; */
     /* max-width: 1000px; */
     margin: 30px;
     flex: 1;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(21, 181, 9);
+    text-decoration: underline;
 }

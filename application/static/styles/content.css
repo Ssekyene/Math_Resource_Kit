@@ -23,10 +23,10 @@
     transition: color 0.3s;
 }
 
-.list ul li a:hover {
+/* .list ul li a:hover {
     color: rgb(21, 181, 9);
     text-decoration: underline;
-}
+} */
 
 .list ul li:hover a {
     color: rgb(21, 181, 9);
