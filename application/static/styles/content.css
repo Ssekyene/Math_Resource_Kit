@@ -12,9 +12,6 @@
     padding: 3px;
 }
 
-.list ul li:hover {
-
-}
 
 .list ul li a {
     color: blue;
@@ -33,3 +30,134 @@
     text-decoration: underline;
 }
 
+.container div {
+    /* border: 1px solid red; */
+    margin-top: 30px;
+}
+ .container h2 {
+    margin-bottom: 10px;
+ }
+
+ .container .resources ul {
+    list-style-type: none;
+    padding: 10px;
+    border: 2px solid #0b0a0a;
+ }
+ 
+ .container .resources ul li span {
+     margin-right: 6px;
+}
+
+.container ol {
+    margin-left: 20px;
+    padding-top: 10px;
+}
+
+.container .quiz ol ul {
+    list-style-type: none;
+    padding-top: 10px;
+    /* border: 2px solid #0b0a0a; */
+}
+
+.container .quiz ol ul li{
+    margin-bottom: 8px;
+    /* border: 2px solid #0b0a0a; */
+}
+
+.container .quiz ol ul li input{
+    margin-right: 8px;
+    /* border: 2px solid #0b0a0a; */
+}
+
+.container .quiz .show  {
+    border: 1px solid #0b0a0a;
+    color: red;
+    text-align: center;
+    padding: 5px;
+    margin: 0 auto;
+    width: 170px;
+}
+
+.upper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+
+}
+
+.upper .left{
+    /* border: 1px solid green; */
+    flex: 1;
+}
+
+.upper .right {
+    background-image: url("../images/learning-to-learn.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    flex: 2;
+    width: 440px;
+    height: 470px;
+    margin-left: 60px;
+    /* border: 1px solid green; */
+}
+
+.upper .left {
+    
+    height: 470px;
+}
+
+.upper .left h2 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+    color: #5151e6;
+    
+}
+
+.upper .left p {
+    margin-top: 25px;
+}
+
+.upper .left button {
+    margin-top: 20px;
+    padding: 8px;
+    background-color: #5151e6;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;
+    outline: 1px solid #0b0a0a;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+.upper .left button:hover {
+    color: #100066;
+    background-color: #E1F9FF;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -2px -2px 5px rgba(255, 255, 255, 0.5);
+}
+
+.lower {
+    margin: 0 auto;
+    /* border: 1px solid #03010189; */
+    width: 50%;
+    /* height: 50%; */
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lower h2 {
+    color: #5151e6;
+    margin-bottom: 20px;
+    padding: 12px;
+    cursor: pointer;
+    transition: border 0.3s ease;
+}
+
+.lower h2:hover {
+    border: 1px solid #5151e6;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -2px -2px 5px rgba(255, 255, 255, 0.5);
+}

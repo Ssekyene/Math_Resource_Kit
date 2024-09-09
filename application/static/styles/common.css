@@ -12,7 +12,8 @@ body {
     height: 100%;
     min-height: 100vh;
 	color: #484848;
-	font-size: 14px;
+    line-height: 1.3em;
+	font-size: 16px;
 	font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
     /* border: 1px solid green; */
 }
@@ -21,11 +22,16 @@ body {
     /* max-width: 1000px; */
     margin: 30px;
     flex: 1;
+    background-color: #fffdfd;
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid red; */
 }
 
 a {
-    color: blue;
+    color: #008EDA;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 a:hover {

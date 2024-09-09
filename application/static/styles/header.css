@@ -1,5 +1,5 @@
 header {
-	background-color: white;
+	background-color: #FAFAFA;
 	height: 100px;
 	width: 100%;
 	display: flex;
@@ -9,12 +9,12 @@ header {
 }
 
 #header_logo {
-	height: 99%;
-	width: 142px;
-	background-image: url("../images/logo1.png");
+	height: 100%;
+	width: 150px;
+	background-image: url("../images/logo.png");
 	background-repeat: no-repeat;
 	background-position: center;
-    background-size: contain;
+    background-size: cover;
 	margin-left: 10px;
 }
 
@@ -35,7 +35,3 @@ nav a {
     /* border: 1px solid red; */
 }
 
-nav a:hover {
-    /* cursor: pointer; */
-    color: rgb(21, 181, 9);
-}
