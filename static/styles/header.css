@@ -1,0 +1,82 @@
+header {
+	background-color: #F5F5F5;
+	height: 100px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 2px solid #03010189;
+}
+
+#header_logo {
+	height: 100%;
+	width: 150px;
+	background-image: url("../images/logo.png");
+	background-repeat: no-repeat;
+	background-position: center;
+    background-size: cover;
+	margin-left: 10px;
+}
+
+nav {
+    height: 100%;
+    width: 45%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+/* .nav_links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 60%;
+} */
+/* margin: auto 40px; */
+
+.nav_links a {
+    display: inline-block;
+    text-decoration: none;
+    color: blue;
+    font-size: 1.3em;
+    /* border: 1px solid red; */
+}
+
+.menu_icon {
+    display: none;
+    font-size: 30px;
+    color: #018DDA;
+    cursor: pointer;
+    margin-right: 20%;
+  }
+
+/* Responsive styling for small screens */
+@media (max-width: 768px) {
+    .nav_links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #333;
+    }
+  
+    .nav_links.active {
+      display: block;
+    }
+  
+    .nav_links a {
+        display: block;
+        text-align: center;
+      /* padding: 10px; */
+        border-bottom: 1px solid #444;
+    }
+  
+    /* Display the menu icon on small screens */
+    .menu_icon {
+      display: block;
+    }
+  }
+
+
+
