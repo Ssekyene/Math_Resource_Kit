@@ -11,6 +11,27 @@ footer {
     border-top: 2px solid #03010189;
     box-sizing: border-box;
     margin-top: 50px;
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    footer {
+        margin-top: 25px;
+    }
+
+    .footer {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer .footer p {
+        width: 100%;
+    }
+
+    footer .socials {
+        width: 50%;
+    }
 }
 
 .footer {

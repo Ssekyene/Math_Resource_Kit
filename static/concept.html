@@ -9,14 +9,22 @@
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="styles/content.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="./scripts/header.js"></script>
 </head>
 <body>
     <header>
         <div id="header_logo"></div>
-        <nav>
+        <!-- Hamburger Icon -->
+        <span class="menu_icon">&#9776;</span>
+        <!-- Close Icon (Initially Hidden) -->
+        <span class="close_icon">&times;</span>
+        
+        <!-- Navigation Links -->
+        <nav class="nav_links">
             <a href="./index.html">Home</a>
             <a href="./concept_list.html">Concepts</a>
-            <a href="./about.html">About</a>
+            <a href="#">About</a>
             <a href="#">Contact</a>
         </nav>
     </header>

@@ -18,7 +18,8 @@ body {
 
 .container {
     /* max-width: 1000px; */
-    margin: 30px;
+    /* margin: 30px; */
+    margin: 125px 30px 30px;
     flex: 1;
     background-color: #fffdfd;
     display: flex;
