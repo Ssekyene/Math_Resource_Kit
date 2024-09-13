@@ -96,7 +96,7 @@
         margin-bottom: 20px;
     }
 
-    section.upper .left button{
+    button{
         margin-top: 10px;
         padding: 4px;
     }
@@ -177,7 +177,7 @@ section.upper .right::before {
     margin-top: 25px;
 }
 
-.upper .left button {
+button {
     margin-top: 20px;
     padding: 8px;
     background-color: #5151e6;
@@ -188,10 +188,10 @@ section.upper .right::before {
     outline: 1px solid #0b0a0a;
     border-radius: 6px;
     transition: background-color 0.3s ease, color 0.3s ease;
-
+    width: 115px;
 }
 
-.upper .left button:hover {
+button:hover {
     color: #100066;
     background-color: #E1F9FF;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -2px -2px 5px rgba(255, 255, 255, 0.5);
