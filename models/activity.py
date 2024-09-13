@@ -4,4 +4,4 @@ from sqlalchemy import Column, String, ForeignKey
 class Activity(BaseModel, Base):
     """Represents an activity(of integration)"""
     __tablename__ = 'activity'
-    concept_id = Column(String(60), ForeignKey('concept'), nullable=False)
+    concept_id = Column(String(60), ForeignKey('concept.id'), nullable=False)

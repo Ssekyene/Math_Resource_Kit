@@ -1,13 +1,13 @@
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, String, Text, Table, ForeignKey
-from sqlachemy.orm import relationship
+from sqlalchemy.orm import relationship
 
 ConceptResource = Table('concept_resource', Base.metadata,
                         Column('concept_id', String(60),
-                                ForeignKey('concept', onupdate='CASCADE', ondelete='CASCADE'),
+                                ForeignKey('concept.id', onupdate='CASCADE', ondelete='CASCADE'),
                                 primary_key=True),
                         Column('resource_id', String(60),
-                                ForeignKey('resource', onupdate='CASCADE', ondelete='CASCADE'),
+                                ForeignKey('resource.id', onupdate='CASCADE', ondelete='CASCADE'),
                                 primary_key=True)
                         )
 
@@ -18,6 +18,8 @@ class Concept(BaseModel, Base):
     name = Column(String(1024), nullable=False)
     introduction = Column(Text, nullable=False)
     conclusion = Column(Text)
-    quizzes = relationship('Quiz', backref='concept', casecade='all delete delete-orphan')
-    activities = relationship('Activity', backref='concept', cascade='all delete delete-orphan')
-    resources = relationship('Resource', secondary='ConceptResource', backref='concepts', viewonly=False)
+    quizzes = relationship('Quiz', backref='concept', cascade='all, delete-orphan')
+    activities = relationship('Activity', backref='concept', cascade='all, delete-orphan')
+    resources = relationship('Resource', secondary='concept_resource', backref='concepts', viewonly=False)
+    descritption = Column(Text, nullable=True)
+
