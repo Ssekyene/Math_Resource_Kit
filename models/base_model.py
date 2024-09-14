@@ -10,7 +10,7 @@ fmt = "%Y-%m-%dT%H:%M:%S.%f"
 class BaseModel:
     """The BaseModel class from which future classes will be derived"""
     id = Column(String(60), primary_key=True)
-    descritption = Column(Text, nullable=False)
+    description = Column(Text, nullable=False)
     created_at = Column(DateTime, default=datetime.now)
     updated_at = Column(DateTime, default=datetime.now)
 

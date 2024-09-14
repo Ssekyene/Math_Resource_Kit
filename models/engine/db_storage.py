@@ -43,6 +43,12 @@ class DBStorage:
         """
         obj_dict = {}
         if cls and cls in classes.values() or cls in classes.keys():
+            try:
+                # converting the Class name to a string
+                if issubclass(cls, Base):
+                    cls = str(cls.__name__)
+            except:
+                pass
             for row in self.__session.query(classes[cls]).all():
                 key = row.__class__.__name__ + '.' + row.id
                 obj_dict[key] = row
@@ -80,7 +86,14 @@ class DBStorage:
         Returns the object based on the class name and its ID, or
         None if not found
         """
-        if cls not in classes.values() or cls not in classes.keys():
+        try:
+            # converting the Class name to a string
+            if issubclass(cls, Base):
+                cls = str(cls.__name__)
+        except:
+            pass
+        
+        if cls not in classes.keys():
             return None
         all_classes = models.storage.all(cls)
         for value in all_classes.values():

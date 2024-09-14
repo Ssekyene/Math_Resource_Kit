@@ -21,5 +21,5 @@ class Concept(BaseModel, Base):
     quizzes = relationship('Quiz', backref='concept', cascade='all, delete-orphan')
     activities = relationship('Activity', backref='concept', cascade='all, delete-orphan')
     resources = relationship('Resource', secondary='concept_resource', backref='concepts', viewonly=False)
-    descritption = Column(Text, nullable=True)
+    description = Column(Text, nullable=True)
 
