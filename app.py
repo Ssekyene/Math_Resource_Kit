@@ -2,6 +2,7 @@
 """
 from flask import Flask, render_template
 import uuid
+from models import storage
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
@@ -25,7 +26,8 @@ def not_available():
 def concept_list():
     """Returns a concept list page"""
     cache_id = (str(uuid.uuid4()))
-    return render_template('concept_list.html', cache_id=cache_id)
+    concepts = storage.all("Concept")
+    return render_template('concept_list.html', concepts=concepts, cache_id=cache_id)
 
 
 @app.route('/concept/')

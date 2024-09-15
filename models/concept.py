@@ -1,5 +1,5 @@
 from models.base_model import BaseModel, Base
-from sqlalchemy import Column, String, Text, Table, ForeignKey
+from sqlalchemy import Column, String, Text, Integer, Table, ForeignKey
 from sqlalchemy.orm import relationship
 
 ConceptResource = Table('concept_resource', Base.metadata,
@@ -18,6 +18,7 @@ class Concept(BaseModel, Base):
     name = Column(String(1024), nullable=False)
     introduction = Column(Text, nullable=False)
     conclusion = Column(Text)
+    priority = Column(Integer, nullable=False)
     quizzes = relationship('Quiz', backref='concept', cascade='all, delete-orphan')
     activities = relationship('Activity', backref='concept', cascade='all, delete-orphan')
     resources = relationship('Resource', secondary='concept_resource', backref='concepts', viewonly=False)

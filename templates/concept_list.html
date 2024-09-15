@@ -33,10 +33,9 @@
         <h1>Concepts</h1>
         <div class="list">
             <ul>
-                <li><a href="/concept">Numbers</a></li>
-                <li><a href="">Working with Integers</a></li>
-                <li><a href="">Fractions, Percentages and Decimals</a></li>
-                <li><a href="">Rectangular Cartesian Coordinates</a></li>
+                {% for concept in concepts.values() %}
+                <li><a href="/concept" data-id="{{ concept.id }}" data-name="{{ concept.name }}">{{ concept.name }}</a></li>
+                {% endfor %}
         </div>
     </div>
     <footer>
