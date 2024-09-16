@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Starts a Flask web application.
+"""Starts a Flask web application for Maths Resource Kit.
 """
 from flask import Flask, render_template
 import uuid
@@ -31,11 +31,11 @@ def concept_list():
     return render_template('concept_list.html', concepts=concepts, cache_id=cache_id)
 
 
-@app.route('/concept/')
-def concept():
+@app.route('/concept/<name>')
+def concept(name):
     """returns a concept page"""
     cache_id = (str(uuid.uuid4()))
-    return render_template('concept.html', cache_id=cache_id)
+    return render_template('concept.html', name=name, cache_id=cache_id)
 
 
 @app.teardown_appcontext
