@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Starts a Flask web application.
 """
 from flask import Flask, render_template
@@ -27,8 +28,6 @@ def concept_list():
     """Returns a concept list page"""
     cache_id = (str(uuid.uuid4()))
     concepts = storage.all("Concept")
-    for c in concepts.values():
-        print(c)
     return render_template('concept_list.html', concepts=concepts, cache_id=cache_id)
 
 
@@ -37,6 +36,14 @@ def concept():
     """returns a concept page"""
     cache_id = (str(uuid.uuid4()))
     return render_template('concept.html', cache_id=cache_id)
+
+
+@app.teardown_appcontext
+def teardown(exc):
+    """
+    release the current SQLAlchemy session after a transaction
+    """
+    storage.close()
 
 
 host = '0.0.0.0'
