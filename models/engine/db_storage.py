@@ -49,16 +49,17 @@ class DBStorage:
                     cls = str(cls.__name__)
             except:
                 pass
-            for row in self.__session.query(classes[cls]).all():
-                key = row.__class__.__name__ + '.' + row.id
-                obj_dict[key] = row
-                return obj_dict
+            objs = self.__session.query(classes[cls]).all()
+            for obj in objs:
+                key = obj.__class__.__name__ + '.' + obj.id
+                obj_dict[key] = obj
+            return obj_dict
         else:
             for clss in classes:
                     objs = self.__session.query(classes[clss]).all()
-                    for row in objs:
-                        key = row.__class__.__name__ + '.' + row.id
-                        obj_dict[key] = row
+                    for obj in objs:
+                        key = obj.__class__.__name__ + '.' + obj.id
+                        obj_dict[key] = obj
             return (obj_dict)
     
     def new(self, obj):

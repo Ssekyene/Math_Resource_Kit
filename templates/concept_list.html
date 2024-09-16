@@ -33,7 +33,7 @@
         <h1>Concepts</h1>
         <div class="list">
             <ul>
-                {% for concept in concepts.values() %}
+                {% for concept in concepts.values()|sort(attribute='priority') %}
                 <li><a href="/concept" data-id="{{ concept.id }}" data-name="{{ concept.name }}">{{ concept.name }}</a></li>
                 {% endfor %}
         </div>

@@ -27,6 +27,8 @@ def concept_list():
     """Returns a concept list page"""
     cache_id = (str(uuid.uuid4()))
     concepts = storage.all("Concept")
+    for c in concepts.values():
+        print(c)
     return render_template('concept_list.html', concepts=concepts, cache_id=cache_id)
 
 
