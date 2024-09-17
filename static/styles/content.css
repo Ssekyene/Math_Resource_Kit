@@ -56,6 +56,7 @@
 .container .quiz ol ul {
     list-style-type: none;
     padding-top: 10px;
+    margin-bottom: 20px;
     /* border: 2px solid #0b0a0a; */
 }
 
@@ -229,7 +230,7 @@ button:hover {
 }
 
 h1.na {
-    line-height: 2.4rem;
+    line-height: 2.488rem;
 
 }
 

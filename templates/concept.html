@@ -47,15 +47,18 @@
         </div>
         <div class="quiz">
             <h2>Quiz</h2>
+            {% autoescape false %}
             <ol>
-                <li>What is a number?</li>
+                {% for quiz in concept.quizzes %}
+                <li><strong>{{ quiz.description }}</strong></li>
                 <ul>
-                    <li><label><input type="radio" id="" value="" name="quiz.id">Lorem ipsum dolor sit amet.</label></li>
-                    <li><label><input type="radio" id="" value="" name="quiz.id">Lorem ipsum dolor amet.</label></li>
-                    <li><label><input type="radio" id="" value="" name="quiz.id">Lorem ipsum dolor sit amet consectetur.</label></li>
-                    <li><label><input type="radio" id="" value="" name="quiz.id">Lorem ipsum dolor sit amet.</label></li>
+                    {% for opt in quiz.options %}
+                    <li><label><input type="radio" id="" value="{{ opt.identifier }}" name="{{ quiz.id }}">{{ opt.description }}</label></li>
+                    {% endfor %}
                 </ul>
+                {% endfor %}
             </ol>
+            {% endautoescape %}
             <div class="show">0 correct out of 1</div>
         </div>
         <div class="activities">
