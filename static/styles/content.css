@@ -227,3 +227,13 @@ button:hover {
     color: #008CD9;
     cursor: pointer; 
 }
+
+h1.na {
+    line-height: 2.4rem;
+
+}
+
+button.na {
+    margin-top: 30px;
+
+}
