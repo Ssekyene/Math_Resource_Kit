@@ -23,6 +23,7 @@ header {
 	background-position: center;
     background-size: cover;
 	margin-left: 10px;
+  cursor: pointer;
 }
 
 nav {
