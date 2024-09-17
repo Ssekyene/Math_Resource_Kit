@@ -35,7 +35,8 @@ def concept_list():
 def concept(name):
     """returns a concept page"""
     cache_id = (str(uuid.uuid4()))
-    return render_template('concept.html', name=name, cache_id=cache_id)
+    concept = storage.get_by_name("Concept", name)
+    return render_template('concept.html', concept=concept, cache_id=cache_id)
 
 
 @app.teardown_appcontext

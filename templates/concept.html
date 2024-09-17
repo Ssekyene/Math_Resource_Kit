@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MRK | {{ name }}</title>
+    <title>MRK | {{ concept.name }}</title>
     <link rel="shortcut icon" href="static/images/icon.png">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/header.css') + '?' + cache_id }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/footer.css') + '?' + cache_id }}">
@@ -24,24 +24,26 @@
         <!-- Navigation Links -->
         <nav class="nav_links">
             <a href="/">Home</a>
-            <a href="/concept_list.html">Concepts</a>
+            <a href="/concept_list">Concepts</a>
             <a href="#">About</a>
             <a href="#">Contact</a>
         </nav>
     </header>
     <div class="container">
-        <h1>Number Bases</h1>
+        <h1>{{ concept.name }}</h1>
         <div class="introduction">
             <h2>Introduction</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae rem facere vitae commodi beatae, officiis exercitationem assumenda obcaecati pariatur perspiciatis error dolore maxime iure consequuntur nulla quaerat laborum provident dolorum tempore molestias nam! Cupiditate fugit repudiandae nulla unde? Temporibus rem eius autem culpa nihil quasi ratione asperiores, dolorum molestias, doloribus illo a quia odio facilis?</p>
+            <p>{{ concept.introduction }}</p>
         </div>
         <div class="resources">
             <h2>Read or Watch</h2>
+            {% autoescape false %}
             <ul>
-                <li><span>+</span><a href="">Lorem ipsum dolor sit amet consectetur</a></li>
-                <li><span>+</span><a href="">Lorem ipsum dolor sit amet.</a></li>
-                <li><span>+</span><a href="">Lorem, ipsum dolor.</a></li>
+                {% for resource in concept.resources %}
+                <li><span>+</span><a href="{{ resource.url }}">{{ resource.description }}</a></li>
+                {% endfor %}
             </ul>
+            {% endautoescape %}
         </div>
         <div class="quiz">
             <h2>Quiz</h2>
