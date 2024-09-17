@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Flask Application for the RESTful API """
+"""Flask Application for the RESTful API"""
 from flask import Flask, make_response, jsonify
 from api.views import app_views
 from flask_cors import CORS

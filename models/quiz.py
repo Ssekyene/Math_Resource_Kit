@@ -14,6 +14,6 @@ QuizOption = Table('quiz_option', Base.metadata,
 class Quiz(BaseModel, Base):
     """Representation of a quiz"""
     __tablename__ = 'quiz'
-    correct_option = Column(String(15), nullable=False)
+    correct_option = Column(String(12), nullable=False)
     concept_id = Column(String(60), ForeignKey('concept.id'), nullable=False)
     options = relationship('Option', secondary='quiz_option', backref='quizzes', viewonly=False)
