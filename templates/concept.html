@@ -47,18 +47,21 @@
         </div>
         <div class="quiz">
             <h2>Quiz</h2>
-            {% autoescape false %}
-            <ol>
-                {% for quiz in concept.quizzes %}
-                <li><strong>{{ quiz.description }}</strong></li>
-                <ul>
-                    {% for opt in quiz.options %}
-                    <li><label><input type="radio" id="" value="{{ opt.identifier }}" name="{{ quiz.id }}">{{ opt.description }}</label></li>
+            <form id="quiz-form">
+                {% autoescape false %}
+                <ol>
+                    {% for quiz in concept.quizzes %}
+                    <li><strong>{{ quiz.description }}</strong></li>
+                    <ul>
+                        {% for opt in quiz.options %}
+                        <li><label><input type="radio" id="" value="{{ opt.identifier }}" name="{{ quiz.id }}">{{ opt.description }}</label></li>
+                        {% endfor %}
+                    </ul>
                     {% endfor %}
-                </ul>
-                {% endfor %}
-            </ol>
-            {% endautoescape %}
+                </ol>
+                {% endautoescape %}
+                <button class="submit" type="submit">Get Score</button>
+            </form>
             <div class="show">0 correct out of 1</div>
         </div>
         <div class="activities">

@@ -53,7 +53,7 @@ class BaseModel:
 
     def delete(self):
             """delete the current instance from the storage"""
-            storage.delete(self)
+            models.storage.delete(self)
 
     def to_dict(self):
             """returns a dictionary containing all keys/values of the instance"""

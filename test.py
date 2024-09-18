@@ -129,3 +129,13 @@ import random
 
 # act = storage.get(Activity, "72864aa6-cc9d-484f-b9c6-4ca2d3954b15")
 # print(act)
+
+
+# quizzes = storage.all(Quiz).values()
+# c = 0
+# for quiz in quizzes:
+#     quiz.delete()
+#     c += 1
+#     if c == 10:
+#         break
+# storage.save()
