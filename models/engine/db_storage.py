@@ -21,7 +21,7 @@ class DBStorage:
         """Instantiate a DBStorage object"""
         user = getenv('user')
         pwd = getenv('pwd')
-        host = getenv('host')
+        host = getenv('MySQL_host')
         db = getenv('db')
         env = getenv('env')
         self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.format(user, pwd, host, db))

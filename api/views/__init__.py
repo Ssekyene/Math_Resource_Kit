@@ -6,3 +6,4 @@ app_views = Blueprint('app_views', __name__, url_prefix='/api/')
 
 from api.views.concepts import *
 from api.views.index import *
+from api.views.quiz import *

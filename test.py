@@ -114,11 +114,13 @@ import random
 #     quiz_l = create_quiz(cpt)
 #     for quiz in quiz_l:
 #         opt_l = []
+#         i = 0
 #         for desc in opt_desc_l:
-#             ident = random.choice(cor_opt_list)
+#             ident = cor_opt_list[i]
 #             opt = Option(description=desc, identifier=ident)
 #             print(opt)
 #             opt_l.append(opt)
+#             i += 1
 #         quiz.options.extend(opt_l)
 #         for opt in opt_l:
 #             opt.save()
@@ -138,4 +140,14 @@ import random
 #     c += 1
 #     if c == 10:
 #         break
+# storage.save()
+
+# all_quizzes = storage.all(Quiz)
+# for q in all_quizzes.values():
+#     q.delete()
+# storage.save()
+
+# all_options = storage.all(Option)
+# for op in all_options.values():
+#     op.delete()
 # storage.save()

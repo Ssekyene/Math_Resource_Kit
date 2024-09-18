@@ -70,13 +70,21 @@
     /* border: 2px solid #0b0a0a; */
 }
 
-.container .quiz .show  {
+.container .quiz .result  {
     border: 1px solid #0b0a0a;
     color: red;
     text-align: center;
     padding: 5px;
     margin: 0 auto;
     width: 170px;
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
     display: none;
 }
 

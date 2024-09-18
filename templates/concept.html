@@ -47,7 +47,7 @@
         </div>
         <div class="quiz">
             <h2>Quiz</h2>
-            <form id="quiz-form">
+            <form id="quiz-form" data-concept_id="{{concept.id}}">
                 {% autoescape false %}
                 <ol>
                     {% for quiz in concept.quizzes %}
