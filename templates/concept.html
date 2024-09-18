@@ -12,6 +12,7 @@
     
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="{{ url_for('static', filename='scripts/header.js') + '?' + cache_id }}"></script>
+    <script src="{{ url_for('static', filename='scripts/content.js') + '?' + cache_id }}"></script>
 </head>
 <body>
     <header>
@@ -47,22 +48,25 @@
         </div>
         <div class="quiz">
             <h2>Quiz</h2>
-            <form id="quiz-form" data-concept_id="{{concept.id}}">
-                {% autoescape false %}
-                <ol>
-                    {% for quiz in concept.quizzes %}
-                    <li><strong>{{ quiz.description }}</strong></li>
-                    <ul>
-                        {% for opt in quiz.options %}
-                        <li><label><input type="radio" id="" value="{{ opt.identifier }}" name="{{ quiz.id }}">{{ opt.description }}</label></li>
+            <p class="disclose">Show quiz</p>
+            <section class="hide">
+                <form id="quiz-form" data-concept_id="{{concept.id}}">
+                    {% autoescape false %}
+                    <ol>
+                        {% for quiz in concept.quizzes %}
+                        <li><strong>{{ quiz.description }}</strong></li>
+                        <ul>
+                            {% for opt in quiz.options %}
+                            <li><label><input type="radio" id="" value="{{ opt.identifier }}" name="{{ quiz.id }}">{{ opt.description }}</label></li>
+                            {% endfor %}
+                        </ul>
                         {% endfor %}
-                    </ul>
-                    {% endfor %}
-                </ol>
-                {% endautoescape %}
-                <button class="submit" type="submit">Get Score</button>
-            </form>
-            <div class="show">0 correct out of 1</div>
+                    </ol>
+                    {% endautoescape %}
+                    <button class="submit" type="submit">Get Score</button>
+                </form>
+                <div class="result hide">0 correct out of 1</div>
+            </section>
         </div>
         <div class="activities">
             <h2>Activities of Integration</h2>

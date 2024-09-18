@@ -77,7 +77,12 @@
     padding: 5px;
     margin: 0 auto;
     width: 170px;
-    display: none;
+}
+
+.container .quiz .disclose {
+    text-decoration: underline;
+    color: #018FDB;
+    cursor: pointer;
 }
 
 .show {

@@ -35,5 +35,4 @@ def get_score(concept_id):
         for option in c_quiz.options:
             if option.identifier == submitted_answer and option.identifier == c_quiz.correct_option:
                 correct_quiz +=1
-        print()
     return jsonify({"score": correct_quiz, "total": total_quizzes})
