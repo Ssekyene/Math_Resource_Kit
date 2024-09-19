@@ -23,4 +23,3 @@ class Concept(BaseModel, Base):
     activities = relationship('Activity', backref='concept', cascade='all, delete-orphan')
     resources = relationship('Resource', secondary='concept_resource', backref='concepts', viewonly=False)
     description = ""
-

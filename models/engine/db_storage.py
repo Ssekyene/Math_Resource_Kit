@@ -124,6 +124,20 @@ class DBStorage:
             except AttributeError:
                 print("Object has no name attribute!")
         return None
+    
+    def concept_search(self, keyword):
+        """
+        Returns a list concept objects based on the keyword
+        or nothing if no concept name matched
+        """
+        concept_objs = models.storage.all(Concept).values()
+        keyword = keyword.lower()
+        matched_concepts = []
+        for obj in concept_objs:
+            name = obj.name.lower()
+            if keyword in name:
+                matched_concepts.append(obj)
+        return matched_concepts      
 
     def count(self, cls=None):
         """
