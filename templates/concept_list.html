@@ -33,12 +33,14 @@
     <div class="container">
         <h1>Concepts</h1>
         <section class="search">
-            <div class="input_wrapper"><input type="search" placeholder="Search for concepts"><i class="search_icon"></i></div>
+            <div class="input_wrapper">
+                <input id="search_input" type="search" placeholder="Search for concepts"><i class="search_icon"></i>
+            </div>
         </section>
         <div class="list">
             <ul>
                 {% for concept in concepts.values()|sort(attribute='priority') %}
-                <li><a href="/concept/{{ concept.name }}" data-id="{{ concept.id }}" data-name="{{ concept.name }}">{{ concept.name }}</a></li>
+                <li><a href="/concept/{{ concept.name }}" data-name="{{ concept.name }}">{{ concept.name }}</a></li>
                 {% endfor %}
         </div>
     </div>

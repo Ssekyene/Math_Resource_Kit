@@ -8,6 +8,7 @@ from models.resource import Resource
 from os import getenv
 from models.base_model import Base
 import models
+import difflib
 
 classes = {"Concept": Concept, "Activity": Activity,
            "Option": Option, "Quiz": Quiz, "Resource": Resource}
@@ -135,7 +136,8 @@ class DBStorage:
         matched_concepts = []
         for obj in concept_objs:
             name = obj.name.lower()
-            if keyword in name:
+            similarity_ratio = difflib.SequenceMatcher(None, keyword, name).ratio()
+            if keyword in name or similarity_ratio > 0.7: # 70% similarity or more
                 matched_concepts.append(obj)
         return matched_concepts      
 

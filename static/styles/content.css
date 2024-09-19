@@ -40,6 +40,10 @@ section.search {
 
 }
 
+section.search .search_icon {
+    cursor: pointer;
+}
+
 .container div.input_wrapper {
     margin-top: 30px;
     margin-bottom: 30px;

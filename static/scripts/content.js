@@ -50,10 +50,61 @@ $(document).ready(function () {
           quizScore(response);
         },
         error: () => {
-          alert('Quiz Service failed!');
+          alert('Quiz Service failed! Try Again');
         }
       });
     }
+  });
+
+  // getting the keyword search for concepts on pressing enter
+  $('#search_input').keydown(function (event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      const keyword = $(this).val().replace(' ', '_');
+      let searchUrl;
+      if (!keyword) {
+        searchUrl = 'http://' + window.location.hostname + ':5001/api/concepts';
+      }
+      else {
+        searchUrl = 'http://' + window.location.hostname + ':5001/api/concepts_search/' + keyword;
+      }
+
+      $.ajax({
+        url: searchUrl,
+        type: 'GET',
+        success: (response) => {
+          $('.list ul ').empty();
+          return matchedConcepts(response);
+        },
+        error: () => {
+          alert('Search Service failed! Try Again');
+        }
+      });
+    }
+  });
+
+  // getting the keyword search for concepts on clicking search icon
+  $('.search .search_icon').click(function () {
+    const keyword = $('#search_input').val().replace(' ', '_');
+    let searchUrl;
+    if (!keyword) {
+      searchUrl = 'http://' + window.location.hostname + ':5001/api/concepts';
+    }
+    else {
+      searchUrl = 'http://' + window.location.hostname + ':5001/api/concepts_search/' + keyword;
+    }
+
+    $.ajax({
+      url: searchUrl,
+      type: 'GET',
+      success: (response) => {
+        $('.list ul ').empty();
+        return matchedConcepts(response);
+      },
+      error: () => {
+        alert('Search Service failed! Try Again');
+      }
+    });
   });
 });
 
@@ -74,4 +125,23 @@ function quizScore (data) {
     });
   }
   $('.quiz .result').text(score + ' correct out of ' + total);
+}
+
+function matchedConcepts (data) {
+  if (!data.length) {
+    const input = $('#search_input').val();
+    $('.list ul').css('border', 'none');
+    $('.list ul').append('<p>No Results found for '+input+'</p>');
+    $('.list ul p').css({
+      width: '200px',
+      margin: '0 auto'
+    });
+  }else {
+    data.sort((a, b) => a.priority - b.priority);
+    $('.list ul').append(
+      data.map((concept) => {
+        return `<li><a href="/concept/${concept.name}" data-name="${concept.name}">${concept.name}</a></li>`
+      })
+      );
+  }
 }
