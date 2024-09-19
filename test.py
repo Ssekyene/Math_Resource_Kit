@@ -128,7 +128,20 @@ import random
 #     for cq in quiz_l:
 #         cq.save()
 
+# a_desc = ["Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum perferendis aut molestias? Quia consectetur, saepe veritatis excepturi quaerat porro sunt illo eaque eum expedita voluptatibus? <b>(answers: <i>Lorem, ipsum dolor.</i>)</b>", "Pisone in eo gymnasio, quod Ptolomaeum vocatur, unaque nobiscum Q. Non enim quaero quid verum, sed quid cuique dicendum sit. Dat enim intervalla et relaxat. At negat Epicurus-hoc enim vestrum lumen estquemquam, qui honeste non? <b>(Answer: iucunde posse vivere)</b>"]
 
+# def create_activity(cpt):
+#     for desc in a_desc:
+#         act = Activity(description=desc, concept=cpt)
+#         print(act)
+#         act.save()
+# for cpt in concept_objs:
+#     create_activity(cpt)
+
+# for cpt in concept_objs:
+#     for act in cpt.activities:
+#         print(act)
+#     print()
 # act = storage.get(Activity, "72864aa6-cc9d-484f-b9c6-4ca2d3954b15")
 # print(act)
 

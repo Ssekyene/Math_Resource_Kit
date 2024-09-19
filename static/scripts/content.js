@@ -20,10 +20,10 @@ $(document).ready(function () {
   // generating data from the quiz form for ajax post
   $('#quiz-form').on('submit', function (event) {
     event.preventDefault();
-    console.log("clicked on submit button")
+    // console.log("clicked on submit button")
+    const doneQuizNum = $('#quiz-form input[type="radio"]:checked').length;
     const formData = {};
     const conceptId = $(this).data('concept_id');
-
     $('#quiz-form input[type="radio"]:checked').each(function () {
       const quizId = $(this).attr('name');
       const selectedAns = $(this).val();
@@ -33,26 +33,34 @@ $(document).ready(function () {
     // sending quiz form data via ajax
     const quizJson = JSON.stringify(formData);
     const quizFormUrl = 'http://' + window.location.hostname + ':5001/api/concepts/' + conceptId + '/quizzes';
-    $.ajax({
-      url: quizFormUrl,
-      type: 'POST',
-      data: quizJson,
-      contentType: 'application/json',
-      success: function (response) {
-        quizScore(response);
-      },
-      error: () => {
-        alert('Quiz submition failed');
-      }
-    });
+    
+    if (doneQuizNum === 0) {
+      $('.quiz .result').removeClass('hide');
+      $('.quiz .result').addClass('show');
+      $('.quiz .result').text('Please Select Options');
+      $('.quiz .result').css('color', '#6F42C1');
+
+    } else {
+      $.ajax({
+        url: quizFormUrl,
+        type: 'POST',
+        data: quizJson,
+        contentType: 'application/json',
+        success: function (response) {
+          quizScore(response);
+        },
+        error: () => {
+          alert('Quiz Service failed!');
+        }
+      });
+    }
   });
 });
 
 function quizScore (data) {
   const score = data.score;
   const total = data.total;
-  console.log("function called")
-  
+  // console.log("function called")
   $('.quiz .result').removeClass('hide');
   $('.quiz .result').addClass('show');
   if (score === total) {
@@ -60,6 +68,10 @@ function quizScore (data) {
       color: 'green'
     });
     $('#quiz-form .submit').addClass('hide');
+  } else{
+    $('.quiz .result').css({
+      color: 'red'
+    });
   }
   $('.quiz .result').text(score + ' correct out of ' + total);
 }

@@ -41,8 +41,9 @@
             {% autoescape false %}
             <ul>
                 {% for resource in concept.resources %}
-                <li><span>+</span><a href="{{ resource.url }}">{{ resource.description }}</a></li>
+                <li><span>+</span><a href="{{ resource.url }}" target="_blank" rel="noopener noreferrer">{{ resource.description }}</a></li>
                 {% endfor %}
+                <!-- <a href="Bearings" target="" rel="noopener noreferrer">Click me</a></div> -->
             </ul>
             {% endautoescape %}
         </div>
@@ -71,13 +72,14 @@
         <div class="activities">
             <h2>Activities of Integration</h2>
             <ol>
-                <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum perferendis aut molestias? Quia consectetur, saepe veritatis excepturi quaerat porro sunt illo eaque eum expedita voluptatibus? (answers: Lorem, ipsum dolor.)
-                </li>
+                {% for act in concept.activities %}
+                <li>{{ act.description | safe }}</act></li>
+                {% endfor %}
             </ol>
         </div>
         <div class="conclusion">
             <h2>Conclusion</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, voluptatum? Totam rerum maxime nulla ipsa, libero eveniet. Fugiat, provident nam ut, excepturi assumenda itaque quam sunt qui optio eos cumque molestias saepe beatae veniam unde enim cupiditate. Veniam mollitia soluta, in obcaecati optio, cum error, nam inventore beatae quasi illum!</p>
+            <p>{{ concept.conclusion | safe }}</p>
         </div>
         <p class="back" onclick="history.back()">back &rarr;</p>
     </div>

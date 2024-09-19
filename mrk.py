@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Starts a Flask web application for Maths Resource Kit.
 """
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 import uuid
 from models import storage
 
@@ -34,6 +34,8 @@ def concept_list():
 @app.route('/concept/<name>')
 def concept(name):
     """returns a concept page"""
+    # if not request.path.startswith('/concept/'):
+    #     return redirect(url_for('/not_available/'))
     cache_id = (str(uuid.uuid4()))
     concept = storage.get_by_name("Concept", name)
     return render_template('concept.html', concept=concept, cache_id=cache_id)
