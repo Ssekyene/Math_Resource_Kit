@@ -98,12 +98,19 @@ section.search .search_icon {
     margin-bottom: 10px;
  }
 
+ .container h1 {
+    line-height: 2rem;
+ }
  .container .resources ul {
     list-style-type: none;
     padding: 10px;
     border: 2px solid #0b0a0a;
  }
- 
+
+ .container .resources ul li {
+    margin-bottom: 8px;
+ }
+
  .container .resources ul li span {
      margin-right: 6px;
 }
@@ -201,7 +208,9 @@ button.submit {
         /* margin-top: -5%; */
     }
 
-    
+    .container .quiz .result {
+        margin-top: 20px;
+    }
 }
 
 /* for significantly small mobile screens */
@@ -321,4 +330,8 @@ h1.na {
 button.na {
     margin-top: 30px;
 
+}
+
+.introduction p, .activities li, .conclusion p {
+    line-height: 1.8rem;
 }
