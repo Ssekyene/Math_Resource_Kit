@@ -47,7 +47,7 @@ section.search {
 
 .input_wrapper {
     height: 42px;
-    width: 35%;
+    width: 390px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -55,7 +55,13 @@ section.search {
     border: 1px solid #008EDA;
     border-radius: 10px;
     padding-left: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
     /* margin-top: -30px; */
+}
+
+.input_wrapper:focus-within {
+    border-color: #4CAF50; /* Green border when focused */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.6); /* Soft green shadow */
 }
 
 .input_wrapper input {
@@ -68,6 +74,7 @@ section.search {
     text-align: left;
     padding-left: 5px;
 }
+
 
 .input_wrapper .search_icon {
     background-image: url('../images/search.png');
