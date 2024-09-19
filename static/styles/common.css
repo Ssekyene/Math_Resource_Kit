@@ -32,9 +32,11 @@ a {
     color: #008EDA;
     text-decoration: none;
     transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
 }
 
 a:hover {
-    color: rgb(21, 181, 9);
+    color: #96C3E8;
     text-decoration: underline;
 }

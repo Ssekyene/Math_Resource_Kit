@@ -24,6 +24,8 @@ header {
     background-size: cover;
 	margin-left: 10px;
   cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 nav {

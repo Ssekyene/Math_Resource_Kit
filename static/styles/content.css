@@ -10,6 +10,7 @@
     font-size: 1.3em;
     margin: 10px 5px;
     padding: 3px;
+    cursor: pointer;
 }
 
 
@@ -268,6 +269,7 @@ section.upper .right::before {
 }
 
 .upper .left p {
+    font-size: 1.2rem;
     margin-top: 25px;
 }
 
@@ -308,12 +310,18 @@ button:hover {
     margin-bottom: 20px;
     padding: 12px;
     cursor: pointer;
-    transition: border 0.3s ease;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -2px -2px 5px rgba(255, 255, 255, 0.5);
+    transition: border 0.4s ease;
+}
+.lower p {
+    font-size: 1.2rem;
 }
 
 .lower h2:hover {
     border: 1px solid #5151e6;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -2px -2px 5px rgba(255, 255, 255, 0.5);
+    font-size: 1.5rem;
+    box-shadow: none;
+    color: #96C3E8;
 }
 
 .container .back {
@@ -332,6 +340,6 @@ button.na {
 
 }
 
-.introduction p, .activities li, .conclusion p {
+.introduction p, .activities li, .conclusion p, .lower p, .upper .left p {
     line-height: 1.8rem;
 }
