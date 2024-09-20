@@ -20,11 +20,11 @@ class DBStorage:
 
     def __init__(self):
         """Instantiate a DBStorage object"""
-        user = getenv('user')
-        pwd = getenv('pwd')
-        host = getenv('MySQL_host')
-        db = getenv('db')
-        env = getenv('env')
+        user = getenv('MRK_MYSQL_USER')
+        pwd = getenv('MRK_MYSQL_USER_PWD')
+        host = getenv('MRK_MYSQL_HOST')
+        db = getenv('MRK_MYSQL_DB')
+        env = getenv('MRK_ENV')
         self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.format(user, pwd, host, db))
 
         if env == 'test':

@@ -21,10 +21,6 @@
     transition: color 0.3s;
 }
 
-/* .list ul li a:hover {
-    color: rgb(21, 181, 9);
-    text-decoration: underline;
-} */
 
 .list ul li:hover a {
     color: rgb(21, 181, 9);
@@ -174,34 +170,26 @@ button.submit {
 @media (max-width: 768px) {
     section.upper {
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         text-align: center;
-        height: 950px;
     }
 
     section.upper .left {
-        width: 100%;
-        margin-top: 0px;
-        /* margin-bottom: 20px; */
-    }
-
+        margin-right: 0;
+        margin-bottom: 30px;
+    } 
     section.upper .left p {
         margin-bottom: 20px;
     }
 
-    button{
-        margin-top: 10px;
-        padding: 4px;
+    section.upper button{
+        margin: 0 auto;
+        /* margin-top: 10px;
+        padding: 4px; */
     }
 
     section.upper .right {
-        width: 100%;
         margin-left: 0px;
-    }
-    section.upper .right::before {
-        content: '';  /* Empty pseudo-element */
-        display: block;
-        margin-bottom: -50%;  /* Maintain 16:9 aspect ratio */
     }
 
     section.lower {
@@ -209,13 +197,18 @@ button.submit {
         /* margin-top: -5%; */
     }
 
+    section.lower a {
+        display: block;
+        margin-top: 5%;
+    }
+    
     .container .quiz .result {
         margin-top: 20px;
     }
 }
 
 /* for significantly small mobile screens */
-@media (max-width: 585px) {
+@media (max-width: 600px) {
     section.lower {
         margin-top: -15%;
     }
@@ -224,41 +217,35 @@ button.submit {
 .upper {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
     margin-bottom: 40px;
     /* border: 1px solid red; */
 
 }
 
+.upper div {
+    margin-top: 0;
+}
+
 .upper .left{
-    /* border: 1px solid yellow; */
+    /* border: 1px solid black; */
+    height: 100%;
     flex: 1;
+    margin-right: 30px;
 }
 
 .upper .right {
-    background-image: url("../images/learning-to-learn.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    flex: 2;
-    width: 100%;
-    /* height: 470px; */
-    margin-left: 60px;
-    /* padding-top: 0.1%; */
-    /* margin-top: 10px; */
-    
-    /* border: 3px solid green; */
-}
-section.upper .right::before {
-    content: '';  /* Empty pseudo-element */
-    display: block;
-    padding-top: 95%;  /* Maintain 16:9 aspect ratio */
-    /* border: 2px solid blue; */
-}
+    flex: 1;
+    /* border: 1px solid blue; */
 
-.upper .left {
-    
-    height: 470px;
+}
+.upper .right img {
+    /* width: 100%;
+    height: auto; */
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    /* max-height: 200px; */
 }
 
 .upper .left h2 {
@@ -287,6 +274,10 @@ button {
     width: 115px;
 }
 
+section.upper button {
+    display: block;
+}
+
 button:hover {
     color: #100066;
     background-color: #E1F9FF;
@@ -312,6 +303,7 @@ button:hover {
     cursor: pointer;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -2px -2px 5px rgba(255, 255, 255, 0.5);
     transition: border 0.4s ease;
+    line-height: 1.8rem;
 }
 .lower p {
     font-size: 1.2rem;

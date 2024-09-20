@@ -18,9 +18,9 @@ body {
 }
 
 .container {
-    /* max-width: 1000px; */
+    /* max-height: 900px; */
     /* margin: 30px; */
-    margin: 125px 18px 18px;
+    margin: 125px 16px 16px;
     flex: 1;
     background-color: #fffdfd;
     display: flex;
