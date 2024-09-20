@@ -15,7 +15,7 @@ class Concept(BaseModel, Base):
     """Representation of concept """
 
     __tablename__ = 'concept'
-    name = Column(String(1024), nullable=False)
+    name = Column(String(1024), unique=True, nullable=False)
     introduction = Column(Text, nullable=False)
     conclusion = Column(Text)
     priority = Column(Integer, nullable=False)
