@@ -87,7 +87,7 @@ $(document).ready(function () {
   $('.search .search_icon').click(function () {
     const keyword = $('#search_input').val().replace(' ', '_');
     let searchUrl;
-    if (!keyword) {
+    if (!keyword | keyword === '*') {
       searchUrl = 'http://' + window.location.hostname + ':5001/api/concepts';
     }
     else {
@@ -127,11 +127,12 @@ function quizScore (data) {
   $('.quiz .result').text(score + ' correct out of ' + total);
 }
 
+// appends matched results or none
 function matchedConcepts (data) {
   if (!data.length) {
     const input = $('#search_input').val();
     $('.list ul').css('border', 'none');
-    $('.list ul').append('<p>No Results found for '+input+'</p>');
+    $('.list ul').append('<p>No Results found for '+input+'. Search * for all</p>');
     $('.list ul p').css({
       width: '200px',
       margin: '0 auto'
