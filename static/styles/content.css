@@ -93,6 +93,7 @@ section.search .search_icon {
 }
  .container h2 {
     margin-bottom: 10px;
+    line-height: 2rem;
  }
 
  .container h1 {
@@ -227,17 +228,11 @@ button.submit {
     margin-top: 0;
 }
 
-.upper .left{
-    /* border: 1px solid black; */
-    height: 100%;
-    flex: 1;
-    margin-right: 30px;
-}
 
 .upper .right {
     flex: 1;
     /* border: 1px solid blue; */
-
+    
 }
 .upper .right img {
     /* width: 100%;
@@ -246,6 +241,12 @@ button.submit {
     max-height: 100%;
     object-fit: contain;
     /* max-height: 200px; */
+}
+.upper .left{
+    /* border: 1px solid black; */
+    height: 100%;
+    flex: 1;
+    margin-right: 30px;
 }
 
 .upper .left h2 {
@@ -258,6 +259,22 @@ button.submit {
 .upper .left p {
     font-size: 1.2rem;
     margin-top: 25px;
+    font-style: italic;
+}
+
+.upper .left p span {
+    color: #5151e6;
+}
+
+.upper .left p span.attract {
+    color: #7d28a1;;
+}
+
+.upper .left p span.green {
+    color: rgb(21, 181, 9);
+}
+.upper .left p span.red {
+    color: #FD756C;
 }
 
 button {
@@ -332,6 +349,19 @@ button.na {
 
 }
 
-.introduction p, .activities li, .conclusion p, .lower p, .upper .left p {
+.introduction p, .activities li, .conclusion p, .lower p, .upper .left p, .about p {
     line-height: 1.8rem;
+}
+
+.about p, .about ul {
+    margin-bottom: 30px;
+
+}
+
+div.about {
+    margin-top: 0;
+}
+
+.about ul {
+    padding-left: 40px;
 }

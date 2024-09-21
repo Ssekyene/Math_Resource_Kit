@@ -41,6 +41,13 @@ def concept(name):
     return render_template('concept.html', concept=concept, cache_id=cache_id)
 
 
+@app.route('/about')
+def about():
+    """returns about page"""
+    cache_id = (str(uuid.uuid4()))
+    return render_template('about.html', cache_id=cache_id)
+
+
 @app.teardown_appcontext
 def teardown(exc):
     """
