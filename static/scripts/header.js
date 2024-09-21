@@ -13,6 +13,7 @@ $(document).ready(function () {
       $('body').removeClass('nav_active');
     });
 
+    // click event for the logo
     $('div#header_logo').click(function() {
       window.location.href = '/home'
     });
