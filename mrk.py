@@ -8,6 +8,12 @@ from models import storage
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 
+@app.route("/mrk_hello")
+def hello():
+    """Return a hello message"""
+    return "MRK Hello"
+
+
 @app.route("/")
 @app.route("/home/")
 def home():
@@ -57,6 +63,6 @@ def teardown(exc):
 
 
 host = '0.0.0.0'
-port = 5000
+port = 5004
 if __name__ == "__main__":
     app.run(host=host, port=port, debug=True)
