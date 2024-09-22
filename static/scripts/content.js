@@ -32,7 +32,7 @@ $(document).ready(function () {
 
     // sending quiz form data via ajax
     const quizJson = JSON.stringify(formData);
-    const quizFormUrl = window.location.hostname + '/api/mrk/concepts/' + conceptId + '/quizzes';
+    const quizFormUrl = '/api/mrk/concepts/' + conceptId + '/quizzes';
     
     if (doneQuizNum === 0) {
       $('.quiz .result').removeClass('hide');
@@ -56,17 +56,17 @@ $(document).ready(function () {
     }
   });
 
-  // getting the keyword search for concepts on pressing enter
+  // getting the keyword search for concepts on pressing enter via ajax
   $('#search_input').keydown(function (event) {
     if (event.keyCode === 13) {
       event.preventDefault();
       const keyword = $(this).val().replace(' ', '_');
       let searchUrl;
       if (!keyword) {
-        searchUrl = window.location.hostname + '/api/mrk/concepts';
+        searchUrl = '/api/mrk/concepts';
       }
       else {
-        searchUrl = window.location.hostname + '/api/mrk/concepts_search/' + keyword;
+        searchUrl = '/api/mrk/concepts_search/' + keyword;
       }
 
       $.ajax({
@@ -83,15 +83,15 @@ $(document).ready(function () {
     }
   });
 
-  // getting the keyword search for concepts on clicking search icon
+  // getting the keyword search for concepts on clicking search icon via ajax
   $('.search .search_icon').click(function () {
     const keyword = $('#search_input').val().replace(' ', '_');
     let searchUrl;
     if (!keyword | keyword === '*') {
-      searchUrl = window.location.hostname + '/api/mrk/concepts';
+      searchUrl = '/api/mrk/concepts';
     }
     else {
-      searchUrl = window.location.hostname + '/api/mrk/concepts_search/' + keyword;
+      searchUrl = '/api/mrk/concepts_search/' + keyword;
     }
 
     $.ajax({
