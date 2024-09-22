@@ -1,0 +1,26 @@
+[Unit]
+Description=Gunicorn instance to server Maths Resource Kit project main app
+After=network.target
+
+[Service]
+PermissionsStartOnly=true
+PIDFile=/run/mrk/mrk.pid
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/Maths_Resource_Kit/
+ExecStartPre=/bin/mkdir /run/mrk
+ExecStartPre=/bin/chown -R ubuntu:ubuntu /run/mrk
+#Environment="PATH=/home/ubuntu/.local/bin"
+Environment="MRK_MYSQL_USER=mrk_user"
+Environment="MRK_MYSQL_USER_PWD=mrk_pwd"
+Environment="MRK_MYSQL_HOST=localhost"
+Environment="MRK_MYSQL_DB=mrk_db"
+Environment="HBNB_TYPE_STORAGE=db"
+ExecStart=/usr/bin/gunicorn -w 3 --access-logfile /tmp/mrk-access.log --error-logfile /tmp/mrk-error.log --bind 0.0.0.0:5000 mrk:app --pid /run/mrk/mrk.pid
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+ExecStopPost=/bin/rm -rf /run/mrk
+PrivateTmp=false 
+
+[Install]
+WantedBy=multi-user.target
