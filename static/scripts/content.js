@@ -32,7 +32,7 @@ $(document).ready(function () {
 
     // sending quiz form data via ajax
     const quizJson = JSON.stringify(formData);
-    const quizFormUrl = 'http://' + window.location.hostname + '/api/mrk/concepts/' + conceptId + '/quizzes';
+    const quizFormUrl = window.location.hostname + '/api/mrk/concepts/' + conceptId + '/quizzes';
     
     if (doneQuizNum === 0) {
       $('.quiz .result').removeClass('hide');
@@ -63,10 +63,10 @@ $(document).ready(function () {
       const keyword = $(this).val().replace(' ', '_');
       let searchUrl;
       if (!keyword) {
-        searchUrl = 'http://' + window.location.hostname + '/api/mrk/concepts';
+        searchUrl = window.location.hostname + '/api/mrk/concepts';
       }
       else {
-        searchUrl = 'http://' + window.location.hostname + '/api/mrk/concepts_search/' + keyword;
+        searchUrl = window.location.hostname + '/api/mrk/concepts_search/' + keyword;
       }
 
       $.ajax({
@@ -88,10 +88,10 @@ $(document).ready(function () {
     const keyword = $('#search_input').val().replace(' ', '_');
     let searchUrl;
     if (!keyword | keyword === '*') {
-      searchUrl = 'http://' + window.location.hostname + '/api/mrk/concepts';
+      searchUrl = window.location.hostname + '/api/mrk/concepts';
     }
     else {
-      searchUrl = 'http://' + window.location.hostname + '/api/mrk/concepts_search/' + keyword;
+      searchUrl = window.location.hostname + '/api/mrk/concepts_search/' + keyword;
     }
 
     $.ajax({
