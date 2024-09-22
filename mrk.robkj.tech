@@ -30,10 +30,14 @@ server {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
+    listen 80;
 
-        listen 80;
+    # Redirect AJAX HTTP calls for API to HTTPS
+    location /api/mrk/ {
+        return 301 https://$host$request_uri;
+    }
 
-        server_name mrk.robkj.tech;
+    server_name mrk.robkj.tech;
     return 404; # managed by Certbot
 
 
