@@ -1,3 +1,8 @@
 **/__pycache__/
 **/*.pyc
-
+*.sh
+*.ini
+alembic/
+*.sql
+mrk.robkj.tech
+gunicorn*
