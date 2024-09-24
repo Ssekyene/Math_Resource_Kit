@@ -3,6 +3,5 @@
 *.sh
 *.ini
 alembic/
-*.sql
 mrk.robkj.tech
 gunicorn*
