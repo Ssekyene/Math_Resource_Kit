@@ -62,7 +62,7 @@ $(document).ready(function () {
       event.preventDefault();
       const keyword = $(this).val().replace(' ', '_');
       let searchUrl;
-      if (!keyword) {
+      if (!keyword | keyword === '*') {
         searchUrl = '/api/mrk/concepts';
       }
       else {
