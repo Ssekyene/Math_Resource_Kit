@@ -13,7 +13,7 @@
 ## Introduction
 [Maths Resource Kit](https://mrk.robkj.tech/) (MRK) is a web application platform that recommends curated `Mathematics resources` such as articles, blogs, videos and interactive tools from all over the internet to meet the need for understanding Mathematics concepts for a competence based learning strategy for `Lower Secondary Level`. Although the platform enlists concepts according to Uganda's curriculum, it is meant to support **every** Lower Secondary Level student/learner.
 
-- Find more about MRK at this [blog](#) 
+- Find more about MRK at this [blog](https://www.linkedin.com/posts/robertssekyene_maths-resource-kit-mrk-is-a-web-application-activity-7244402966227566592-2vaW?utm_source=share&utm_medium=member_desktop) at LinkedIn
 
 ## Usage
 You may browse by scrolling through the available concepts or search for any concept using the search bar.
